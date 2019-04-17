@@ -63,19 +63,19 @@ var questions = [{
 }]
 
 var preguntas = {
-    questions = questions,
-    currentPregunta = 0,
-    time = startTime,
+    questions: questions,
+    currentPregunta: 0,
+    time: startTime,
     correct: 0,
     incorrect: 0,
-    // missed: 0,
+   
 
     countdown: function () {
         trivia.time--;
         $('#timeLeft').html(trivia.time);
 
         if (trivia.time === 0) {
-            trivia.outOfTime();
+            trivia.timesUp();
         }
     },
     
@@ -83,13 +83,13 @@ var preguntas = {
         timer = setInterval(trivia.time, 1000);
         htmlContent.html("<h2>" + questions[this.currentQuestion].question + "</h2>");
         for (var i = 0; i < questions[this.currentQuestion].answerOptions.length; i++) {
-            htmlContent.append("<button class='choices' id='button'" + "data-name='" + questions[this.currentQuestion].answerOptions[i] + "'>' + questions[this.currentQuestion].answerOptions[i] + "</button>");
-        },
+            htmlContent.append("<button class='choices' id='button'" + questions[this.currentQuestion].answerOptions[i] + '>' + questions[this.currentQuestion].answerOptions[i] + "</button>");
+        }
     },
     
     nextPregunta: function () {
         trivia.counter = timerValue;
-        $("#timeLeft").html(trivia.counter);
+        $("#timeLeft").html(trivia.time);
         trivia.currentPregunta++;
         trivia.questionTime();
     },
@@ -148,7 +148,6 @@ var preguntas = {
         $('#secondsLeft').html(trivia.time);
         htmlContent.append('<h3>Correct: ' + trivia.correct + '</h3>');
         htmlContent.append('<h3>Incorrect: ' + trivia.incorrect + '</h3>');
-        // htmlContent.append('<h3>Missed: ' + (questions.length - (trivia.incorrect + trivia.correct)) + '</h3>');
         htmlContent.append('<br><button id="again">Play Again?</button>');
     },
     
@@ -161,13 +160,13 @@ var preguntas = {
     }
 };
 
-$(document).on('click', '#start', function (e) {
+$(document).on('click', '#start', function (x) {
     $('#timerDisplay').prepend('<h2>Time Remaining: <span id="secondsLeft">20</span> seconds</h2>');
     trivia.questionTime();
 });
-$(document).on('click', '#again', function (e) {
+$(document).on('click', '#again', function (x) {
     trivia.reset();
 });
-$(document).on('click', '.choices', function (e) {
-    trivia.clicked(e);
+$(document).on('click', '.choices', function (x) {
+    trivia.clicked(x);
 });

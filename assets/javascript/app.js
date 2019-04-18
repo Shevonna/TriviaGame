@@ -1,66 +1,66 @@
-var htmlContent = $("game")
+var htmlContent = $("#game")
 var startTime = 10;
 
 var questions = [{
     question: "What is 2 + 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["4"],
+    answer: "4",
     pic: "assets/images/math4"
-}]
-[{
+},
+{
     question: "What is 2 - 2 + 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["2"],
+    answer: "2",
     pic: "assets/images/math2"
-}]
-[{
+},
+{
     question: "What is 2 x 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["4"],
+    answer: "4",
     pic: "assets/images/math4"
-}]
-[{
+},
+{
     question: "What is 2 to the 2nd power?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["4"],
+    answer: "4",
     pic: "assets/images/math4"
-}]
-[{
+},
+{
     question: "What is 4 + 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["6"],
+    answer: "6",
     pic: "assets/images/math6"
-}]
-[{
+},
+{
     question: "What is 4 - 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["2"],
+    answer: "2",
     pic: "assets/images/math2"
-}]
-[{
+},
+{
     question: "What is 4 x 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["8"],
+    answer: "8",
     pic: "assets/images/math8"
-}]
-[{
+},
+{
     question: "What is 4 / 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["2"],
+    answer: "2",
     pic: "assets/images/math2"
-}]
-[{
+},
+{
     question: "What is 6 + 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["8"],
+    answer: "8",
     pic: "assets/images/math8"
-}]
-[{
+},
+{
     question: "What is 6 - 2?",
     answerOptions: ["2", "4", "6", "8"],
-    answer: ["4"],
+    answer: "4",
     pic: "assets/images/math4"
-}]
+}];
 
 var preguntas = {
     questions: questions,
